@@ -20,10 +20,11 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('top-desk');
   });
 
-  it('should render title', () => {
+  it('should render the four tabs', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, top-desk');
+    const labels = Array.from(compiled.querySelectorAll('[role="tab"]')).map(t => t.textContent?.trim());
+    expect(labels).toEqual(['Acasă', 'Despre noi', 'Topografie', 'Contact']);
   });
 });
