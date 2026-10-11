@@ -11,13 +11,24 @@
   flex-wrap: wrap;
   gap: 8px 12px;
   padding: 16px;
-  background: var(--mat-sys-primary);
-  color: var(--mat-sys-on-primary);
+  // matches the navy background of logo.png
+  background: #022b57;
+  color: #fff;
 }
 
-.brand {
-  font-size: 1.5rem;
-  font-weight: 500;
+// logo.png has wide empty margins around the wordmark; crop to the text
+.brand-logo {
+  display: block;
+  width: 160px;
+  height: 44px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.brand-logo img {
+  display: block;
+  height: 130px;
+  margin: -43px 0 0 -38px;
 }
 
 .tagline {
